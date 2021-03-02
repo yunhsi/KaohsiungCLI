@@ -1,0 +1,86 @@
+#content {
+  .result{
+    background: #eee;
+    padding: 30px;
+    &::after{
+      content: '';
+      clear: both;
+      display: table;
+    }
+    .card {
+      width: 45.7%;
+      margin: 20px;
+      float: left;
+      border-radius: 8px;
+      border: 1px solid #000;
+      background: #fff;
+      @include pad_pro{
+        width: 44.5%;
+      }
+      @include pad{
+        width: 100%;
+        margin: 0;
+        margin-bottom: 40px;
+      }
+      @include pad{
+        margin-bottom: 30px;
+      }
+      .card-top{
+        height: 200px;
+        background-position: center;
+        background-size: cover;
+        border-radius: 8px 8px 0px 0px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        color: #fff;
+        h2,h3{
+          font-size: 20px;
+          padding: 15px;
+        }
+        h2{
+          font-size: 30px;
+          font-weight: normal;
+        }
+      }
+      .card-text{
+        padding: 15px;
+        p,a{
+          margin-bottom: 10px;
+        }
+        a{
+          color: #00cc99;
+        }
+      }
+    }
+  }
+  .pagination{
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+    font-size: 18px;
+    .active{
+      background: #000;
+      border-radius: 50%;
+      a{
+        color: #fff;
+      }
+    }
+    li{
+      width: 25px;
+      height: 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 8px;
+      a{
+        color: #000;
+        text-decoration: none;
+      }
+    }
+  }
+  .source{
+    text-align: center;
+    margin: 20px;
+  }
+}

@@ -1,0 +1,35 @@
+$green:rgb(50, 167, 128);
+
+@mixin phone {
+  @media (max-width: 576px){
+    @content
+  }
+}
+@mixin pad {
+  @media (max-width: 768px){
+    @content
+  }
+}
+@mixin pad_pro {
+  @media (max-width: 1024px){
+    @content
+  }
+}
+@mixin desktop {
+  @media (max-width: 1200px){
+    @content
+  }
+}
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+  @include pad_pro {
+    max-width: 800px;
+  }
+  @include pad {
+    max-width: 600px;
+  }
+  @include phone {
+    max-width: 100%;
+  }
+}
