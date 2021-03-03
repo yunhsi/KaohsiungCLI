@@ -4,7 +4,7 @@
       <header>
         <h1>高雄旅遊資訊網</h1>
         <select v-model="currentAttraction">
-          <option value="">請選擇行政區</option>
+          <option value="">請選擇地區</option>
           <option :value="item" v-for="item of area" :key="item.id">{{ item }}</option>
         </select>
       </header>
@@ -49,9 +49,9 @@
             <a class="page-link" href="#"><i class="fas fa-caret-right"></i></a>
           </li>
         </ul>
-        <p class="source">資料來源：高雄市政府</p>
       </div>
     </div>
+    <p class="source">資料來源：高雄市政府</p>
     <div class="goTop" :class="{ 'show': show }" @click="goTop()">
       <i class="fas fa-chevron-up"></i>
       <small>TOP</small>
@@ -108,7 +108,7 @@ export default {
     filterData () {
       let items = []
       if (this.currentAttraction !== '') {
-        items = this.attractions.filter((item, i) => {
+        items = this.attractions.filter((item) => {
           return item.Zone === this.currentAttraction
         })
       } else {
