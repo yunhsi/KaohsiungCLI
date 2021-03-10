@@ -1,10 +1,21 @@
 #content {
-  .result{
+  .result {
     padding-top: 30px;
-    &::after{
-      content: '';
+    @include pad{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    &::after {
+      content: "";
       clear: both;
       display: table;
+    }
+    .message{
+      background: $orange;
+      display: flex;
+      justify-content: center;
+      padding: 20px;
     }
     .card {
       width: 46%;
@@ -12,23 +23,24 @@
       float: left;
       border-radius: 8px;
       box-shadow: 2px 2px 10px #ccc;
-      transition: all .3s;
+      transition: all 0.3s;
       background: #fff;
-      &:hover{
+      &:hover {
         box-shadow: 3px 3px 5px #ccc;
       }
-      @include pad_pro{
+      @include pad_pro {
         width: 45%;
       }
-      @include pad{
+      @include pad {
         width: 100%;
         margin: 0;
         margin-bottom: 40px;
       }
-      @include pad{
+      @include phone {
+        width: 80%;
         margin-bottom: 30px;
       }
-      .card-top{
+      .card-top {
         height: 200px;
         background-position: center;
         background-size: cover;
@@ -37,46 +49,53 @@
         justify-content: space-between;
         align-items: flex-end;
         color: #fff;
-        h2,h3{
+        position: relative;
+        h2,
+        h3 {
           font-size: 20px;
           padding: 15px;
         }
-        h2{
+        h2 {
           font-size: 30px;
           font-weight: normal;
+          @include phone {
+            font-size: 20px;
+          }
         }
       }
-      .card-text{
+      .card-text {
         padding: 15px;
-        p,a{
+        p,
+        a {
           margin-bottom: 10px;
         }
-        a{
+        a {
           color: $orange;
         }
       }
     }
   }
-  .pagination{
+  .pagination {
     display: flex;
     justify-content: center;
     margin: 30px;
+    margin-bottom: 50px;
     font-size: 18px;
-    .active{
+    .active {
       background: $orange;
       border-radius: 50%;
-      a{
+      a {
         color: #fff;
       }
     }
-    li{
+    li {
       width: 25px;
       height: 25px;
       display: flex;
       justify-content: center;
       align-items: center;
       margin: 0 8px;
-      a{
+      a {
         color: $orange;
         text-decoration: none;
       }
@@ -84,9 +103,36 @@
   }
 }
 
-.source{
+.source {
   text-align: center;
   padding: 20px;
-  background:linear-gradient(45deg, rgb(131, 110, 207), rgb(83, 111, 190));
+  background: linear-gradient(45deg, rgb(131, 110, 207), rgb(83, 111, 190));
   color: #fff;
+}
+
+.favorites{
+  height: 50px;
+  width: 50px;
+  background: $orange;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 30px;
+  bottom: 30px;
+  font-size: 18px;
+  @include pad{
+    left: 15px;
+  }
+  @include phone{
+    height: 40px;
+    width: 40px;
+    font-size: 16px;
+    bottom: 10px;
+    left: 10px;
+  }
+  a{
+    color: white;
+  }
 }

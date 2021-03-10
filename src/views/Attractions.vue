@@ -1,5 +1,6 @@
 <template>
   <div class="Attractions">
+    <loading :active.sync="isLoading"></loading>
     <div id="header">
       <header>
         <h1>高雄旅遊資訊網</h1>
@@ -77,7 +78,6 @@ export default {
   },
   methods: {
     getData () {
-      this.isLoading = true
       const url = 'https://raw.githubusercontent.com/hexschool/KCGTravel/master/datastore_search.json'
       this.$http.get(url)
         .then(res => {
@@ -87,7 +87,6 @@ export default {
               this.area.push(items.Zone)
             }
           })
-          this.isLoading = false
         })
     },
     showGotop () {
@@ -129,5 +128,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../assets/scss/all.scss';
+@import '../assets/scss/all.css';
 </style>
